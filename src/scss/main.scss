@@ -1,0 +1,11 @@
+@use './general/variables' as *;
+@use './general/mixin.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+//importo bootstrap dopo npm i bootstrap
+//@import 'bootstrap/scss/bootstrap';
+
+
+@import './general/typography';
+@import './general/general';
+@import './general/utilis'
