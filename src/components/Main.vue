@@ -1,14 +1,7 @@
 <template>
   <div class="container">
     <div class="jumbotron">
-      <swiper :options="swiperOptions">
-        <swiper-slide>
-          <img class="logo" src="../assets/img/jumbo.jpg" alt="logo">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="logo" src="../assets/img/jumbo2.jpg" alt="logo">
-        </swiper-slide>
-      </swiper>
+      <img class="logo" :src="images[counter]" alt="logo">
       <div class="jumbotron-text">
         <h1>Buy and Sell your car at its value</h1>
         <h4>Find the right place and dealer</h4>
@@ -17,8 +10,8 @@
           <span class="learn-more-arrow">&rarr;</span>
         </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div @click="next" class="swiper-button-next">&#10095;</div>
+      <div @click="prev" class="swiper-button-prev">&#10094;</div>
     </div>
     <div class="card-container">
       <Card
@@ -34,36 +27,43 @@
 </template>
 
 <script>
-import 'swiper/swiper-bundle.min.css';
-
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import { cardsData } from "../data/menus";
 import Card from './Card.vue';
 
 export default {
   name: "Main",
   components: {
-    Card,
-    Swiper,
-    SwiperSlide
+    Card
   },
   data() {
     return {
       cards: cardsData,
-      swiperOptions: {
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-          delay: 8000,
-        },
-      }
+      counter: 0,
+      images: [
+        "src/assets/img/jumbo.jpg",
+        "src/assets/img/jumbo2.jpg"
+      ]
     };
+  },
+  methods: {
+    next() {
+      this.counter++;
+      if (this.counter === this.images.length) this.counter = 0;
+    },
+    prev() {
+      this.counter--;
+      if (this.counter < 0) this.counter = this.images.length - 1;
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.next();
+    }, 8000);
   }
 };
 </script>
+
+<!-- Stili rimangono gli stessi -->
 
 
 <style lang="scss">
@@ -83,6 +83,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 
 .card-container {
@@ -101,8 +102,20 @@ export default {
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
-  width: 50px;
-  height: 50px;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
 }
 
 .jumbotron-text {
@@ -147,4 +160,3 @@ img.logo {
   width: 100%;
 }
 </style>
-
