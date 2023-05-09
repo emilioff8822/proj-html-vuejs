@@ -139,7 +139,51 @@ const cardsData = [
   
 ];
 
+const auto1 = [
+  {
+    img: "src/assets/img/cabrio.jpg",
+    name: "Cabrio",
+    listings: 3
+  },
+  {
+    img: "src/assets/img/coupe.jpg",
+    name: "Coupe",
+    listings: 0
+  },
+  {
+    img: "src/assets/img/hatchback.jpg",
+    name: "Hatchback",
+    listings: 2
+  },
+  {
+    img: "src/assets/img/pickup.jpg",
+    name: "Pick Up",
+    listings: 0
+  },
+  {
+    img: "src/assets/img/sedan.jpg",
+    name: "Sedan",
+    listings: 3
+  },
+  {
+    img: "src/assets/img/suv.jpg",
+    name: "SUV",
+    listings: 4
+  }
+];
+
+
+const secondMenu = [
+  { type: "input", placeholder: "Keywords" },
+  { type: "text", text: "Location" },
+  { type: "text", text: "All Categories" },
+  { type: "text", text: "Brand" },
+  { type: "text", text: "Fuel Type" },
+  { type: "text", text: "Transmission" },
+  { type: "text", text: "Status" },
+  { type: "button", text: "Search" },
+];
 
 
 
-export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData };
+export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1 };

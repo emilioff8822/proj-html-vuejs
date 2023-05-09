@@ -14,20 +14,20 @@
       <div @click="prev" class="swiper-button-prev">&#10094;</div>
     </div>
     <div class="card-container">
-      <Card
-        v-for="card in cards"
-        :key="card.thumb"
-        :thumb="card.thumb"
-        :price="card.price"
-        :series="card.series"
-        :type="card.type"
-      />
+      <div class="second-menu" v-for="(item, index) in secondMenu" :key="index">
+        <input v-if="item.type === 'input'" v-model="item.value" :placeholder="item.placeholder" />
+        <span v-else-if="item.type === 'text'">{{ item.text }}</span>
+        <button v-else-if="item.type === 'button'" class="search-button">{{ item.text }}</button>
+      </div>
+      <div class="auto1-cards">
+        <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { cardsData } from "../data/menus";
+import { cardsData, secondMenu, auto1 } from "../data/menus";
 import Card from './Card.vue';
 
 export default {
@@ -38,6 +38,8 @@ export default {
   data() {
     return {
       cards: cardsData,
+      secondMenu,
+      auto1,
       counter: 0,
       images: [
         "src/assets/img/jumbo.jpg",
@@ -63,7 +65,7 @@ export default {
 };
 </script>
 
-<!-- Stili rimangono gli stessi -->
+
 
 
 <style lang="scss">
@@ -86,18 +88,6 @@ export default {
   width: 100%;
 }
 
-.card-container {
-  background-color: black;
-  height: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-top: 50px;
-  padding-right: 200px;
-  padding-left: 200px;
-  position: relative;
-}
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -159,4 +149,48 @@ img.logo {
   object-fit: cover;
   width: 100%;
 }
+.card-container {
+  background-color: white;
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 50px;
+  padding-right: 200px;
+  padding-left: 200px;
+  position: relative;
+}
+
+.second-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.second-menu input,
+.second-menu span {
+  border: 1px solid lightgray;
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
+}
+
+.second-menu button.search-button {
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.auto1-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 25px;
+  justify-content: space-between;
+  
+}
+
+
 </style>
