@@ -23,8 +23,6 @@
         <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
       </div>
       <div class="auto2-cards">
-
-
         <Card
         v-for="(item, index) in auto2"
         :key="index"
@@ -47,8 +45,40 @@
         </button>
       </div>
     </div>
-  </div>
-</template>
+   
+    
+       <div class="jumbotron jumbo2">
+          <div class="left-column">
+            <div class="circle-top-left">
+              <div class="circle-content">
+                <div class="circle-number">2 4</div>
+                <div class="circle-text">Years of <br> Experience</div>
+              </div>
+            </div>
+            
+            <div class="circle-bottom-right">
+              <div class="circle-content">
+                <div class="circle-number">2 4 0</div>
+                <div class="circle-text">Social Expert <br> Team</div>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="right-column">
+            <h1><strong>Want to buy or sell a vehicle?</strong></h1>
+            <p class="right-column-text">You can put your vehicles for sale by registering on our website. Whether you are a dealer or sell personally. Sell ​​your vehicle in the most profitable way. With this system, which has millions of members, you will be able to buy and sell vehicles quickly.</p>
+            <h3><strong>Model Vehicles</strong></h3>
+            <p class="right-column-text">We are sure that you will find vehicles of suitable models on our website.</p>
+            <h3><strong>2nd Hand Vehicles</strong></h3>
+            <p class="right-column-text">You can put your used vehicles for sale by adding them to our website.</p>
+            <button class="know-us-button">Get to know us <span class="show-all-arrow">&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+    </template>
+    
+    
 
 <script>
 import { secondMenu, auto1, auto2 } from "../data/menus";
@@ -326,4 +356,120 @@ img.logo {
   margin-left: 10px;
   font-size: 16px;
 }
+.jumbo2 {
+  display: flex;
+  height: 600px;
+}
+
+.left-column {
+  /* Carica prima l'immagine di sfondo e poi l'immagine di primo piano */
+  background-image: url("../assets/img/jumbo22.png"), url("../assets/img/circle.png");
+  background-size: 80%, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  width: 50%;
+  height: 100%;
+}
+
+
+.left-column img {
+  width: 50%;
+}
+
+.right-column {
+  background-color: white;
+  color: black;
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-column h1,
+.right-column h3,
+.right-column p,
+.know-us-button {
+  margin-bottom: 20px;
+  text-align: left;
+  
+}
+
+.right-column-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.know-us-button {
+  background-color: black;
+  color: white;
+  padding: 20px 20px;
+  width: 200px;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.know-us-button:hover {
+  background-color: #333;
+  padding: 10px 15px;
+
+}
+
+.show-all-arrow {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.circle-top-left, .circle-bottom-right {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 180px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-top: 15px;
+  font-size: 26px; 
+  font-weight: bold; 
+  padding-bottom: 20px;
+}
+
+.circle-top-left {
+  top: 80px;
+  left: 200px;
+  text-align: center;
+  
+}
+
+.circle-bottom-right {
+  bottom: 50px;
+  right: 800px;
+  text-align: center;
+}
+.circle-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-number {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.circle-text {
+  font-size: 18px;
+}
+
 </style>
