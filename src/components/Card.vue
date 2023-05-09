@@ -87,12 +87,12 @@ export default {
 }
 
 .card.auto2-card {
-  width: 240px;
+  width: 500px;
 }
 
 .card-img-container {
   width: 100%;
-  height: 100px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
