@@ -1,29 +1,26 @@
-<script>
-import { cardsData } from "../data/menus";
-import Card from './Card.vue';
-
-export default {
-  name: "Main",
-  components: {
-    Card
-  },
-  data() {
-    return {
-      cards: cardsData
-    };
-  }
-};
-</script>
-
 <template>
   <div class="container">
     <div class="jumbotron">
-      <img class="logo" src="../assets/img/jumbotron.jpg" alt="logo">
+      <swiper :options="swiperOptions">
+        <swiper-slide>
+          <img class="logo" src="../assets/img/jumbo.jpg" alt="logo">
+        </swiper-slide>
+        <swiper-slide>
+          <img class="logo" src="../assets/img/jumbo2.jpg" alt="logo">
+        </swiper-slide>
+      </swiper>
+      <div class="jumbotron-text">
+        <h1>Buy and Sell your car at its value</h1>
+        <h4>Find the right place and dealer</h4>
+        <div class="learn-more">
+          Learn more
+          <span class="learn-more-arrow">&rarr;</span>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
     <div class="card-container">
-      <div class="current-series">
-        CURRENT SERIES
-      </div>
       <Card
         v-for="card in cards"
         :key="card.thumb"
@@ -32,10 +29,42 @@ export default {
         :series="card.series"
         :type="card.type"
       />
-      <button class="load-more">LOAD MORE</button>
     </div>
   </div>
 </template>
+
+<script>
+import 'swiper/swiper-bundle.min.css';
+
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import { cardsData } from "../data/menus";
+import Card from './Card.vue';
+
+export default {
+  name: "Main",
+  components: {
+    Card,
+    Swiper,
+    SwiperSlide
+  },
+  data() {
+    return {
+      cards: cardsData,
+      swiperOptions: {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 8000,
+        },
+      }
+    };
+  }
+};
+</script>
+
 
 <style lang="scss">
 .container {
@@ -45,11 +74,11 @@ export default {
 }
 
 .jumbotron {
-  background-image: url('../assets/img/jumbotron.jpg');
   background-size: cover;
+  color: white;
   background-position: top;
   background-repeat: no-repeat;
-  height: 40%;
+  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,20 +98,41 @@ export default {
   position: relative;
 }
 
-.current-series {
-  position: absolute;
-  top: calc(-2%);
-  left: 200px;
-  z-index: 1;
-  background-color: rgb(17, 117, 232);
+.swiper-button-next,
+.swiper-button-prev {
   color: white;
-  font-weight: bold;
-  border: none;
-  padding: 10px 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.jumbotron-text {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+
+.jumbotron-text h1 {
+  margin-bottom: 10px;
+}
+
+.jumbotron-text h4 {
+  margin-bottom: 20px;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  &:hover {
-    background-color: rgb(31, 152, 168);
-  }
+}
+
+.learn-more-arrow {
+  margin-left: 10px;
+  font-size: 16px;
 }
 
 .logo {
@@ -90,52 +140,11 @@ export default {
   height: auto;
   overflow: hidden;
 }
-img.logo{
-  height: 400px;
+
+img.logo {
+  height: 650px;
   object-fit: cover;
   width: 100%;
-  
-}
-
-
-.card {
-  flex: 0 0 calc(100% / 6 - 1rem);
-  margin: 0.5rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  color: white;
-  text-align: center;
-}
-
-.card-img-container {
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1rem;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.load-more {
-  background-color: rgb(17, 117, 232);
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: 10px 20px;
-  margin-bottom: 40px;
-  margin-top: 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: rgb(31, 152, 168);
-  }
 }
 </style>
+
