@@ -4,9 +4,14 @@
       <img :src="img" :alt="name">
     </div>
     <h3>{{ name }}</h3>
-    <p>{{ listings }} Listings</p>
+    <p><font-awesome-icon :icon="checkIcon" /> {{ type }}</p>
+    <p><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
+    <p><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
+    <p><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
+    <p v-if="listings">Listings: {{ listings }}</p>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -22,7 +27,39 @@ export default {
     },
     listings: {
       type: Number,
-      required: true
+      required: false
+    },
+    checkIcon: {
+      type: String,
+      required: false
+    },
+    type: {
+      type: String,
+      required: false
+    },
+    priceIcon: {
+      type: String,
+      required: false
+    },
+    price: {
+      type: Number,
+      required: false
+    },
+    brandIcon: {
+      type: String,
+      required: false
+    },
+    brand: {
+      type: String,
+      required: false
+    },
+    fuelIcon: {
+      type: String,
+      required: false
+    },
+    fuel: {
+      type: String,
+      required: false
     }
   }
 }

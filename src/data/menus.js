@@ -185,5 +185,109 @@ const secondMenu = [
 ];
 
 
+// ... le altre liste ed importazioni
 
-export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1 };
+const auto2 = [
+  {
+    img: "src/assets/img/m9.jpg",
+    name: "BMW M9",
+    checkIcon: "fas fa-check",
+    type: "Cabrio",
+    priceIcon: "fas fa-dollar-sign",
+    price: 34000,
+    brandIcon: "fas fa-car",
+    brand: "BMW",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Electric",
+  },
+  {
+    img: "src/assets/img/88.jpg",
+    name: "BMW M8",
+    checkIcon: "fas fa-check",
+    type: "Cabrio",
+    priceIcon: "fas fa-dollar-sign",
+    price: 34000,
+    brandIcon: "fas fa-car",
+    brand: "BMW",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Diesel",
+  },
+  {
+    img: "src/assets/img/44.jpg",
+    name: "BMW 4",
+    checkIcon: "fas fa-check",
+    type: "Cabrio",
+    priceIcon: "fas fa-dollar-sign",
+    price: 34000,
+    brandIcon: "fas fa-car",
+    brand: "BMW",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Gasoline",
+  },
+  {
+    img: "src/assets/img/55.jpg",
+    name: "Seat Ibiza",
+    checkIcon: "fas fa-check",
+    type: "Hatchback",
+    priceIcon: "fas fa-dollar-sign",
+    price: 27000,
+    brandIcon: "fas fa-car",
+    brand: "SEAT",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Electric",
+  },
+  {
+    img: "src/assets/img/88.jpg",
+    name: "Seat Anona",
+    checkIcon: "fas fa-check",
+    type: "SUV",
+    priceIcon: "fas fa-dollar-sign",
+    price: 68000,
+    brandIcon: "fas fa-car",
+    brand: "SEAT",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Gasoline",
+  },
+  {
+    img: "src/assets/img/taigo.jpg",
+    name: "Volkswagen Taigo",
+    checkIcon: "fas fa-check",
+    type: "SUV",
+    priceIcon: "fas fa-dollar-sign",
+    price: 47000,
+    brandIcon: "fas fa-car",
+    brand: "SEAT",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Electric",
+  },
+  {
+    img: "src/assets/img/cross.jpg",
+    name: "Volkswagen Taigo",
+    checkIcon: "fas fa-check",
+    type: "SUV",
+    priceIcon: "fas fa-dollar-sign",
+    price: 47000,
+    brandIcon: "fas fa-car",
+    brand: "SEAT",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Diesel",
+  },
+  {
+    img: "src/assets/img/passat.jpg",
+    name: "Volkswagen Passat",
+    checkIcon: "fas fa-check",
+    type: "SUV",
+    priceIcon: "fas fa-dollar-sign",
+    price: 32000,
+    brandIcon: "fas fa-car",
+    brand: "SEAT",
+    fuelIcon: "fas fa-gas-pump",
+    fuel: "Diesel",
+  },
+];
+
+
+
+
+export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1, auto2 };
+

@@ -22,12 +22,28 @@
       <div class="auto1-cards">
         <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
       </div>
+      <div class="auto2-cards">
+        <Card
+          v-for="(item, index) in auto2"
+          :key="index"
+          :img="item.img"
+          :name="item.name"
+          :checkIcon="item.checkIcon"
+          :type="item.type"
+          :priceIcon="item.priceIcon"
+          :price="item.price"
+          :brandIcon="item.brandIcon"
+          :brand="item.brand"
+          :fuelIcon="item.fuelIcon"
+          :fuel="item.fuel"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { cardsData, secondMenu, auto1 } from "../data/menus";
+import { secondMenu, auto1, auto2 } from "../data/menus";
 import Card from './Card.vue';
 
 export default {
@@ -37,9 +53,9 @@ export default {
   },
   data() {
     return {
-      cards: cardsData,
       secondMenu,
       auto1,
+      auto2,
       counter: 0,
       images: [
         "src/assets/img/jumbo.jpg",
@@ -191,6 +207,13 @@ img.logo {
   justify-content: space-between;
   
 }
+.auto2-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-between;
+}
+
 
 
 </style>
