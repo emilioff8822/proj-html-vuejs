@@ -237,7 +237,7 @@ const auto2 = [
     fuel: "Electric",
   },
   {
-    img: "src/assets/img/88.jpg",
+    img: "src/assets/img/anona.jpg",
     name: "Seat Anona",
     checkIcon: "fas fa-check",
     type: "SUV",

@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="additionalClass">
     <div class="card-img-container">
       <img :src="img" :alt="name">
     </div>
@@ -12,10 +12,14 @@
   </div>
 </template>
 
-
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 export default {
   name: "Card",
+  components: {
+    FontAwesomeIcon
+  },
   props: {
     img: {
       type: String,
@@ -25,51 +29,54 @@ export default {
       type: String,
       required: true
     },
-    listings: {
-      type: Number,
-      required: false
-    },
     checkIcon: {
       type: String,
-      required: false
+      default: null
     },
     type: {
       type: String,
-      required: false
+      default: null
     },
     priceIcon: {
       type: String,
-      required: false
+      default: null
     },
     price: {
       type: Number,
-      required: false
+      default: null
     },
     brandIcon: {
       type: String,
-      required: false
+      default: null
     },
     brand: {
       type: String,
-      required: false
+      default: null
     },
     fuelIcon: {
       type: String,
-      required: false
+      default: null
     },
     fuel: {
       type: String,
-      required: false
+      default: null
+    },
+    listings: {
+      type: Number,
+      default: null
+    },
+    additionalClass: {
+      type: String,
+      default: ""
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .card {
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
   color: black;
   border-radius: 4px;
   overflow: hidden;
@@ -77,6 +84,10 @@ export default {
   padding: 16px;
   text-align: center;
   width: 172px;
+}
+
+.card.auto2-card {
+  width: 240px;
 }
 
 .card-img-container {
@@ -95,6 +106,7 @@ export default {
 
 h3 {
   margin: 0;
+  margin-bottom: 8px;
 }
 
 p {

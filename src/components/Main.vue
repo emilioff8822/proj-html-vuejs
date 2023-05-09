@@ -24,19 +24,20 @@
       </div>
       <div class="auto2-cards">
         <Card
-          v-for="(item, index) in auto2"
-          :key="index"
-          :img="item.img"
-          :name="item.name"
-          :checkIcon="item.checkIcon"
-          :type="item.type"
-          :priceIcon="item.priceIcon"
-          :price="item.price"
-          :brandIcon="item.brandIcon"
-          :brand="item.brand"
-          :fuelIcon="item.fuelIcon"
-          :fuel="item.fuel"
-        />
+        v-for="(item, index) in auto2"
+        :key="index"
+        :img="item.img"
+        :name="item.name"
+        :checkIcon="item.checkIcon"
+        :type="item.type"
+        :priceIcon="item.priceIcon"
+        :price="item.price"
+        :brandIcon="item.brandIcon"
+        :brand="item.brand"
+        :fuelIcon="item.fuelIcon"
+        :fuel="item.fuel"
+        :additionalClass="'auto2-card'"
+      />
       </div>
     </div>
   </div>
@@ -83,7 +84,6 @@ export default {
 
 
 
-
 <style lang="scss">
 .container {
   height: 100%;
@@ -103,7 +103,6 @@ export default {
   position: relative;
   width: 100%;
 }
-
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -165,6 +164,7 @@ img.logo {
   object-fit: cover;
   width: 100%;
 }
+
 .card-container {
   background-color: white;
   height: 60%;
@@ -199,21 +199,96 @@ img.logo {
   padding: 10px 15px;
   cursor: pointer;
 }
+
 .auto1-cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   gap: 25px;
   justify-content: space-between;
-  
 }
+
 .auto2-cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  justify-content: space-between;
 }
 
+.auto2-card {
+  width: calc(25% - 20px);
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.auto2-card h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
 
+.auto2-card .fas.fa-check {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
+
+.auto2-card p {
+  margin: 0;
+}
+
+.auto2-card p:nth-child(2) {
+  margin-bottom: 8px;
+}
+.auto2-card p:nth-child(4),
+.auto2-card p:nth-child(5),
+.auto2-card p:nth-child(6) {
+  display: inline;
+  margin-right: 8px;
+}
+
+@media (max-width: 1200px) {
+  .card-container {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-container {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .auto2-card {
+    width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .auto2-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .auto2-card {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .auto2-inline {
+    display: flex;
+    gap: 8px;
+  }
+}
 </style>
