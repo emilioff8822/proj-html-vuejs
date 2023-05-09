@@ -138,7 +138,7 @@ footer {
     display: flex;
 
     &.row1 {
-      background-color: rgb(17, 117, 232);
+      background-color:black;
       height: 25%;
       align-items: center;
       justify-content: center;

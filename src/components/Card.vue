@@ -94,7 +94,7 @@ export default {
 
 .card-img-container {
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;

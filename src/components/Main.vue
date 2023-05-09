@@ -23,6 +23,8 @@
         <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
       </div>
       <div class="auto2-cards">
+
+
         <Card
         v-for="(item, index) in auto2"
         :key="index"
@@ -38,6 +40,11 @@
         :fuel="item.fuel"
         :additionalClass="'auto2-card'"
       />
+      </div>
+      <div class="show-all-button-container">
+        <button class="show-all-button">
+          Show all cards <span class="show-all-arrow">&rarr;</span>
+        </button>
       </div>
     </div>
   </div>
@@ -290,5 +297,33 @@ img.logo {
     display: flex;
     gap: 8px;
   }
+}
+
+.show-all-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.show-all-button {
+  background-color: black;
+  color: white;
+  padding: 15px 15px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.show-all-button:hover {
+  background-color: #333;
+}
+
+.show-all-arrow {
+  margin-left: 10px;
+  font-size: 16px;
 }
 </style>
