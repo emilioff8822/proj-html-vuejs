@@ -87,7 +87,9 @@ export default {
 }
 
 .card.auto2-card {
-  width: 500px;
+  width: calc((100% / 4) - 1rem);   
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-img-container {
