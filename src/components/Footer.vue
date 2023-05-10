@@ -136,9 +136,7 @@ justify-content: space-between;
   padding: 5px;;
 }
 
-.footer-column li.active {
-  color: yellow;
-}
+
 .footer-bottom {
   width: 100%;
   text-align: center;
@@ -172,4 +170,12 @@ footer span {
   margin-right: 10px; 
 
 }
+
+.footer-column li span:hover .svg-inline--fa {
+  transform: scale(2);
+  transition: transform 0.3s ease;
+  color: yellow;
+}
+
+
 </style>

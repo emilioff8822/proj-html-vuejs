@@ -2,6 +2,9 @@
   <div class="card" :class="additionalClass">
     <div class="card-img-container">
       <img :src="img" :alt="name">
+      <div class="heart-icon">
+        <font-awesome-icon icon="heart" />
+      </div>
     </div>
     <h3 class="card-name">
       {{ name }}
@@ -22,6 +25,7 @@
     <p v-if="listings">Listings: {{ listings }}</p>
   </div>
 </template>
+
 
 
 
@@ -232,5 +236,16 @@ padding-bottom: 10px;
   transform: scale(1.2);
 }
 
+
+.heart-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+}
+
+.heart-icon:hover {
+  color: red;
+}
 </style>
 

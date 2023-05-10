@@ -482,5 +482,12 @@ img.logo {
 .circle-text {
   font-size: 18px;
 }
+.circle-top-left, .circle-bottom-right {
+  transition: transform 0.3s ease; /* Durata dell'animazione */
+}
+
+.circle-top-left:hover, .circle-bottom-right:hover {
+  transform: scale(1.2);
+}
 
 </style>
