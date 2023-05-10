@@ -24,6 +24,7 @@
 </template>
 
 
+
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -115,7 +116,7 @@ export default {
   margin-bottom: 16px;
   padding: 16px;
   text-align: center;
-  width: 172px;
+  width: 200px;
   height: 300px;
   display: flex;  /* Aggiunto */
   flex-direction: row; /* Aggiunto */
@@ -124,7 +125,7 @@ export default {
 }
 
 .card.auto2-card {
-  width: calc((100% / 4) - 1rem);   
+  width: 25%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -140,6 +141,7 @@ export default {
 
 .card-img-container img {
   max-width: 100%;
+  
   max-height: 100%;
 }
 
@@ -182,7 +184,7 @@ padding-bottom: 10px;
 
 .icon-text {
   display: inline-flex;
-  align-items: center;
+  align-items: start;
   margin-right: 10px;
 }
 
