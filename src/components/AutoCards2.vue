@@ -1,5 +1,6 @@
 <template>
   <div class="card" :class="additionalClass">
+    
     <div class="card-img-container">
       <img :src="img" :alt="name">
       <div 
@@ -157,6 +158,7 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
 }
 
 .card-img-container img {
