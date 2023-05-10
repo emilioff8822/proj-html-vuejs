@@ -39,6 +39,10 @@ export default {
 @use "../scss/general/variables" as *;
 @use "../scss/general/mixin" as *;
 
+nav ul li a.custom-button:hover {
+  transform: scale(1.1);
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -84,6 +88,8 @@ header {
           border-radius: 5px;
           display: flex;
           align-items: center;
+          transition: background-color 0.3s ease-out;
+
 
           .button-content {
             display: flex;
@@ -100,4 +106,5 @@ header {
     }
   }
 }
+
 </style>

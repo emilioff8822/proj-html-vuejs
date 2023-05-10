@@ -112,10 +112,14 @@ export default {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  transform-origin: center; 
 }
 
 .more-button:hover {
   background-color: #333;
+  background-color: #333;
+  transform: scale(1.25);
 }
 
 .card:hover {
