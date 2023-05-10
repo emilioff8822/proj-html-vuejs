@@ -88,18 +88,25 @@ const footerImages = [
 ];
 
 
+
 const list1 = [
-  { text: "New Jerseuy, USA" },
-  { text: "+1 (234) 567 8910" },
-  { text: "example@example.com" },
-  { text: "social icons" }
-  
+  { text: "New Jersey, USA", icon: ["fas", "map-marker-alt"] },
+  { text: "+1 (234) 567 8910", icon: ["fas", "phone-volume"] },
+  { text: "example@example.com", icon: ["fas", "envelope"] },
+  { 
+    icons: [
+      { platform: "facebook", icon: ["fab", "facebook"] },
+      { platform: "instagram", icon: ["fab", "instagram"] },
+      { platform: "twitter", icon: ["fab", "twitter"] },
+    ]
+  },
 ];
 
+
+
 const list2 = [
-  { text: "Subscribe to be informed about or services and products" },
-  { text: "input" },
-  { text: "input" },
+  { text: "Subscribe to be informed about or services and products" }
+
 
 
 ];

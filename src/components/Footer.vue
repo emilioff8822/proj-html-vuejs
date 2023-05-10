@@ -1,17 +1,41 @@
 <template>
   <div class="container">
     <footer class="footer">
+     
       <div class="footer-column">
-        <h3>Autocar</h3>
+        <h3>
+          <img src="../assets/img/logo-autocar11.png" alt="logo" />
+          Autocar
+        </h3>
         <ul>
-          <li v-for="item in list1" :key="item.text" @mouseover="onMouseOver(item.text)" @mouseout="onMouseOut" :class="{ 'active': hoveredItem === item.text }">{{ item.text }}</li>
+          <li 
+          v-for="(item, index) in list1" 
+          :key="index" 
+          @mouseover="onMouseOver(item.text)" 
+          @mouseout="onMouseOut" 
+          :class="{ 'active': hoveredItem === item.text }">
+          <template v-if="item.text">
+            <font-awesome-icon :icon="item.icon" />
+            {{ item.text }}
+          </template>
+          <template v-else>
+            <div v-for="icon in item.icons" :key="icon.platform">
+              <font-awesome-icon :icon="icon.icon" />
+            </div>
+          </template>
+        </li>
+          
         </ul>
       </div>
+     
+     
       <div class="footer-column">
         <h3>Join our Newsletter</h3>
         <ul>
           <li v-for="item in list2" :key="item.text" @mouseover="onMouseOver(item.text)" @mouseout="onMouseOut" :class="{ 'active': hoveredItem === item.text }">{{ item.text }}</li>
         </ul>
+        <input type="email" placeholder="Your email address" />
+        <input type="submit" value="Subscribe" />
       </div>
       <div class="footer-column">
         <h3>My account</h3>
@@ -35,9 +59,14 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { mainMenu, footerMenu, footerImages, list1, list2 ,list3,list4, socialIcons } from '../data/menus';
+
 export default {
   name: "Footer",
+  components: {
+    FontAwesomeIcon
+  },
   data() {
     return {
       list1,
@@ -63,22 +92,20 @@ export default {
 @use '../scss/general/variables' as *;
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 .footer {
-  background-color: black;
-  color: white;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+background-color: black;
+color: white;
+width: 100%;
+height: 500px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
   padding-left: 200px;
   padding-right: 100px;
 }
@@ -95,7 +122,8 @@ export default {
 }
 
 .footer-column ul {
-  padding: 0;
+  padding: 10px;
+  margin-right: 20px;
 }
 
 .footer-column li {
@@ -115,4 +143,16 @@ export default {
   bottom: 0;
   padding: 20px 0;
 }
+.footer-column li div.social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100px; 
+}
+.footer-column input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}
+
 </style>
