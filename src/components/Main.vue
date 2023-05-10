@@ -75,25 +75,31 @@
             <button class="know-us-button">Get to know us <span class="show-all-arrow">&rarr;</span></button>
           </div>
         </div>
+
+
+
       </div>
     </template>
     
     
 
 <script>
-import { secondMenu, auto1, auto2 } from "../data/menus";
+import { secondMenu, auto1, auto2, clienti } from "../data/menus";
 import Card from './Card.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default {
   name: "Main",
   components: {
-    Card
+    Card,
+    FontAwesomeIcon
   },
   data() {
     return {
       secondMenu,
       auto1,
       auto2,
+      clienti,
       counter: 0,
       images: [
         "src/assets/img/jumbo.jpg",

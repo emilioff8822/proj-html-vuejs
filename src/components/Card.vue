@@ -1,9 +1,11 @@
 <template>
   <div class="card" :class="additionalClass">
+    <p class="card-text">{{ text }}</p>
+
     <div class="card-img-container">
       <img :src="img" :alt="name">
     </div>
-    <h3>{{ name }}</h3>
+    <h3 class="card-name">{{ name }}</h3>
     <p><font-awesome-icon :icon="checkIcon" /> {{ type }}</p>
     <p><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
     <p><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
@@ -26,6 +28,10 @@ export default {
       required: true
     },
     name: {
+      type: String,
+      required: true
+    },
+    text: {
       type: String,
       required: true
     },
@@ -73,6 +79,9 @@ export default {
 };
 </script>
 
+
+
+
 <style scoped>
 .card {
   background-color: white;
@@ -84,6 +93,7 @@ export default {
   padding: 16px;
   text-align: center;
   width: 172px;
+  height: 306px;
 }
 
 .card.auto2-card {
@@ -94,7 +104,7 @@ export default {
 
 .card-img-container {
   width: 100%;
-  height: 150px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,5 +123,20 @@ h3 {
 
 p {
   margin: 0;
+}
+
+.card-img-container {
+  padding-bottom: 10px; 
+}
+
+.card-name {
+  margin: 0;
+padding-top: 10px;  
+padding-bottom: 10px; 
+}
+
+.card-text {
+  margin: 0;
+  padding-bottom: 20px; 
 }
 </style>

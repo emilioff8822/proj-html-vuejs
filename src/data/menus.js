@@ -287,7 +287,28 @@ const auto2 = [
 ];
 
 
+const clienti = [
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+    img: "src/assets/img/man1.png",
+    nome: "Adam"
+  },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+    img: "src/assets/img/man2.png",
+    nome: "Robert"
+  },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+    img: "src/assets/img/wo1.png",
+    nome: "Rita"
+  },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+    img: "src/assets/img/wo2.png",
+    nome: "Ora"
+  }
+];
 
-
-export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1, auto2 };
+export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1, auto2, clienti };
 
