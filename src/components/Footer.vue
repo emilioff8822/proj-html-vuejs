@@ -133,7 +133,12 @@ justify-content: space-between;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  padding: 5px;;
+  padding: 5px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Add transition here */
+
+}.footer-column li:hover {
+  transform: scale(1.2); 
+  color:gold; 
 }
 
 
@@ -174,7 +179,7 @@ footer span {
 .footer-column li span:hover .svg-inline--fa {
   transform: scale(2);
   transition: transform 0.3s ease;
-  color: yellow;
+  color: gold;
 }
 
 
