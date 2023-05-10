@@ -1,23 +1,28 @@
 <template>
   <div class="card" :class="additionalClass">
-    <div class="inline-elements">
-      <p class="card-text">{{ text }}</p>
-      <p class="card-tel">{{ tel }}</p>
-    </div>
-    <p class="card-autocar">{{ autocar }}</p>
-    <p class="card-domanda">{{ domanda }}</p>
-
     <div class="card-img-container">
       <img :src="img" :alt="name">
     </div>
-    <h3 class="card-name">{{ name }}</h3>
-    <p><font-awesome-icon :icon="checkIcon" /> {{ type }}</p>
-    <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
-    <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
-    <p class="icon-text"><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
+    <h3 class="card-name">
+      {{ name }}
+      <span class="icon-text"><font-awesome-icon :icon="checkIcon" /></span>
+    </h3>
+    <p class="type">{{ type }}</p>
+    <div class="icon-row">
+      <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
+      <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
+      <p class="icon-text"><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
+    </div>
+    <p class="card-text">{{ text }}</p>
+    <div class="inline-elements">
+      <p class="card-tel">{{ tel }}</p>
+      <p class="card-autocar">{{ autocar }}</p>
+      <p class="card-domanda">{{ domanda }}</p>
+    </div>
     <p v-if="listings">Listings: {{ listings }}</p>
   </div>
 </template>
+
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -176,8 +181,9 @@ padding-bottom: 10px;
 }
 
 .icon-text {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 .icon-text .fa-icon {
@@ -188,9 +194,17 @@ padding-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; 
+}
 
-
-
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
 
 
