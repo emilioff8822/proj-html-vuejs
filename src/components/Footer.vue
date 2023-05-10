@@ -19,9 +19,9 @@
             {{ item.text }}
           </template>
           <template v-else>
-            <div v-for="icon in item.icons" :key="icon.platform">
+            <span v-for="icon in item.icons" :key="icon.platform">
               <font-awesome-icon :icon="icon.icon" />
-            </div>
+            </span>
           </template>
         </li>
           
@@ -49,11 +49,13 @@
           <li v-for="item in list4" :key="item.text" @mouseover="onMouseOver(item.text)" @mouseout="onMouseOut" :class="{ 'active': hoveredItem === item.text }">{{ item.text }}</li>
         </ul>
       </div>
-      <div class="footer-bottom">
-        <p>2022 All Rights Reserved</p>
-      </div>
+      
+    
       
     </footer>
+    <div class="footer-bottom">
+      <p>2022 All Rights Reserved</p>
+    </div>
    
   </div>
 </template>
@@ -107,7 +109,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
   padding-left: 200px;
-  padding-right: 100px;
+  padding-right: 200px;
 }
 
 .footer-column {
@@ -129,19 +131,20 @@ justify-content: space-between;
 .footer-column li {
   cursor: pointer;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;;
 }
 
 .footer-column li.active {
   color: yellow;
 }
-
 .footer-bottom {
   width: 100%;
   text-align: center;
-  color: white;
-  position: absolute;
-  bottom: 0;
+  color:black;
   padding: 20px 0;
+  font-size: 14px;
 }
 .footer-column li div.social-icons {
   display: flex;
@@ -155,4 +158,18 @@ justify-content: space-between;
   padding: 5px;
 }
 
+.footer-column:not(:last-child) {
+  margin-right: 40px;
+}
+
+footer span {
+  margin: 5px;
+}
+
+
+
+.svg-inline--fa {
+  margin-right: 10px; 
+
+}
 </style>
