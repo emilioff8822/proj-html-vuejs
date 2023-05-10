@@ -429,7 +429,6 @@ img.logo {
 
 .know-us-button:hover {
   background-color: #333;
-  padding: 10px 15px;
 
 }
 
