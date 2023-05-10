@@ -15,7 +15,7 @@
     <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
     <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
     <p class="icon-text"><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
-    <p v-if="listings">Listings: {{ listings }}</p>
+    <p>Listings: {{ listings }}</p>
   </div>
 </template>
 
