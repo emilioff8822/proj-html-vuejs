@@ -181,6 +181,10 @@ footer span {
   transition: transform 0.3s ease;
   color: gold;
 }
-
+.footer-bottom {
+  background-color: black;
+  color: white;
+  
+}
 
 </style>
