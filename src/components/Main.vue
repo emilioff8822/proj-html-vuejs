@@ -23,7 +23,7 @@
         <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
       </div>
       <div class="auto2-cards">
-        <Card
+        <AutoCards2
         v-for="(item, index) in auto2"
         :key="index"
         :img="item.img"
@@ -86,20 +86,25 @@
 <script>
 import { secondMenu, auto1, auto2, clienti } from "../data/menus";
 import Card from './Card.vue';
+import AutoCards2 from './AutoCards2.vue';  
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 
 export default {
   name: "Main",
   components: {
     Card,
-    FontAwesomeIcon
-  },
+    FontAwesomeIcon,
+    AutoCards2
+},
   data() {
     return {
       secondMenu,
       auto1,
       auto2,
       clienti,
+      AutoCards2,
       counter: 0,
       images: [
         "src/assets/img/jumbo.jpg",

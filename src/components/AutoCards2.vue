@@ -23,7 +23,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
-  name: "Card",
+  name: "AutoCards2",
   components: {
     FontAwesomeIcon
   },
@@ -100,10 +100,6 @@ export default {
 };
 </script>
 
-
-
-
-
 <style scoped>
 .card {
   background-color: white;
@@ -116,6 +112,9 @@ export default {
   text-align: center;
   width: 172px;
   height: 300px;
+  display: flex;  /* Aggiunto */
+  flex-direction: row; /* Aggiunto */
+  flex-wrap: wrap; /* Aggiunto */
  
 }
 
@@ -196,4 +195,8 @@ padding-bottom: 10px;
 
 
 
+
+
+
 </style>
+

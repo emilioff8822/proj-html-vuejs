@@ -42,15 +42,17 @@
 
 
 <script>
-import { secondMenu, auto1, auto2, clienti, auto4 } from "../data/menus";
+import { secondMenu, auto1, auto2, clienti, auto4} from "../data/menus";
 import Card from './Card.vue';
 import auto4card from './autocard4.vue';  
+import AutoCards2 from './AutoCards2.vue';  
+
 
 
 export default {
   name: "Main2",
   components: {
-    Card,auto4card
+    Card,auto4card,AutoCards2
   },
   data() {
     return {
