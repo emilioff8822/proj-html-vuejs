@@ -116,6 +116,8 @@ export default {
   text-align: center;
   width: 172px;
   height: 300px;
+  transition: transform 0.3s ease;
+
  
 }
 
@@ -191,7 +193,9 @@ padding-bottom: 10px;
 }
 
 
-
+.card:hover {
+  transform: scale(1.2);
+}
 
 
 

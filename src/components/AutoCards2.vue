@@ -121,6 +121,8 @@ export default {
   display: flex;  /* Aggiunto */
   flex-direction: row; /* Aggiunto */
   flex-wrap: wrap; /* Aggiunto */
+  transition: transform 0.3s ease ;
+
  
 }
 
@@ -226,7 +228,9 @@ padding-bottom: 10px;
   margin: 0 auto;
 }
 
-
+.card:hover {
+  transform: scale(1.2);
+}
 
 </style>
 

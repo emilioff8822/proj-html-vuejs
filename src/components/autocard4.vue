@@ -59,6 +59,8 @@ export default {
   text-align: center;
   width: 100%;
   height: 100%;
+  transition: transform 0.3s ease ;
+
 }
 
 .auto4-card {
@@ -115,4 +117,9 @@ export default {
 .more-button:hover {
   background-color: #333;
 }
+
+.card:hover {
+  transform: scale(1.2);
+}
+
 </style>
