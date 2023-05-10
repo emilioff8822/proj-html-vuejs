@@ -2,7 +2,11 @@
   <div class="card" :class="additionalClass">
     <div class="card-img-container">
       <img :src="img" :alt="name">
-      <div class="heart-icon">
+      <div 
+        class="heart-icon"
+        :class="{ 'active': isHeartClicked }"
+        @click="toggleHeart"
+      >
         <font-awesome-icon icon="heart" />
       </div>
     </div>
@@ -26,9 +30,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -36,6 +37,16 @@ export default {
   name: "AutoCards2",
   components: {
     FontAwesomeIcon
+  },
+  data() {
+    return {
+      isHeartClicked: false,
+    };
+  },
+  methods: {
+    toggleHeart() {
+      this.isHeartClicked = !this.isHeartClicked;
+    },
   },
   props: {
     img: {
@@ -109,6 +120,9 @@ export default {
   }
 };
 </script>
+
+
+
 
 <style scoped>
 .card {
@@ -241,10 +255,10 @@ padding-bottom: 10px;
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: white;
+  color: grey;
 }
 
-.heart-icon:hover {
+.heart-icon.active {
   color: red;
 }
 </style>

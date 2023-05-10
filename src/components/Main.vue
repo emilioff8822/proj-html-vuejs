@@ -490,4 +490,20 @@ img.logo {
   transform: scale(1.2);
 }
 
+.show-all-button:hover {
+  transform: scale(1.2);
+}
+.show-all-button {
+  transition: transform 0.3s ease;
+}
+
+.know-us-button:hover{
+  transform: scale(1.2);
+
+}
+
+know-us-button{
+  transform: scale(1.2);
+
+}
 </style>
