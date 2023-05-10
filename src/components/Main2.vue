@@ -18,18 +18,39 @@
         />
       </div>
     </div>
+
+    <div class="jumbotron jumbo4">
+      <font-awesome-icon icon="thumbs-up" color="black" class="fa-3x"/>
+      <h2 style="color: black;">Recent Articles</h2>
+      <p style="color: black;">Useful information about car</p>
+
+      <div class="card-container">
+        <auto4card 
+        v-for="(auto, index) in auto4" 
+        :key="index" 
+        :img="auto.img" 
+        :tel="auto.tel" 
+        :domanda="auto.domanda"
+        :text="auto.text"
+        :button="auto.button"
+      />
+      </div>
+    </div>
+
   </div>
 </template>
 
 
 <script>
-import { secondMenu, auto1, auto2, clienti } from "../data/menus";
+import { secondMenu, auto1, auto2, clienti, auto4 } from "../data/menus";
 import Card from './Card.vue';
+import auto4card from './autocard4.vue';  
+
 
 export default {
   name: "Main2",
   components: {
-    Card
+    Card,auto4card
   },
   data() {
     return {
@@ -37,6 +58,7 @@ export default {
       auto1,
       auto2,
       clienti,
+      auto4,
       counter: 0,
       images: [
         "src/assets/img/jumbo.jpg",
@@ -107,6 +129,23 @@ export default {
 }
 
 .card-container .card {
-  
+
+}
+.jumbo4 {
+  background-color: white;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.jumbo4 .card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  grid-auto-rows: minmax(auto, 1fr);
 }
 </style>

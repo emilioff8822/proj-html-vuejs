@@ -1,6 +1,9 @@
 <template>
   <div class="card" :class="additionalClass">
     <p class="card-text">{{ text }}</p>
+    <p class="card-tel">{{ tel }}</p>
+    <p class="card-autocar">{{ autocar }}</p>
+    <p class="card-domanda">{{ domanda }}</p>
 
     <div class="card-img-container">
       <img :src="img" :alt="name">
@@ -74,10 +77,27 @@ export default {
     additionalClass: {
       type: String,
       default: ""
-    }
+    },
+    tel: {
+      type: String,
+      default: null
+    },
+    autocar: {
+      type: String,
+      default: null
+    },
+    domanda: {
+      type: String,
+      default: null
+    },
+    button: {
+      type: String,
+      default: 'More'
+    },
   }
 };
 </script>
+
 
 
 
@@ -93,7 +113,7 @@ export default {
   padding: 16px;
   text-align: center;
   width: 172px;
-  height: 306px;
+  height: 300px;
 }
 
 .card.auto2-card {
@@ -138,5 +158,18 @@ padding-bottom: 10px;
 .card-text {
   margin: 0;
   padding-bottom: 20px; 
+}
+
+.more-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 </style>

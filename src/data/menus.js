@@ -89,41 +89,37 @@ const footerImages = [
 
 
 const list1 = [
-  { text: "Characters" },
-  { text: "Comics" },
-  { text: "Movies" },
-  { text: "Tv" },
-  { text: "Games" },
-  { text: " Videos" },
-  { text: "News" },
+  { text: "New Jerseuy, USA" },
+  { text: "+1 (234) 567 8910" },
+  { text: "example@example.com" },
+  { text: "social icons" }
+  
 ];
 
 const list2 = [
-  { text: "Terms of Use" },
-  { text: "Privacy policy" },
-  { text: "Ad choices" },
-  { text: "Jobs" },
-  { text: "Subscriptions" },
-  { text: "Talent Workshops" },
-  { text: "CPSC Certificates" },
-  { text: "Ratings" },
-  { text: "Shop Help" },
-  { text: "Contact Us" }
+  { text: "Subscribe to be informed about or services and products" },
+  { text: "input" },
+  { text: "input" },
+
 
 ];
 
 const list3 = [
-  { text: "DC" },
-  { text: "MAD Magazine" },
-  { text: "DC Kids" },
-  { text: "DC Universe" },
-  { text: "DC Power Visa" }
+  { text: "My account" },
+  { text: "Checkout" },
+  { text: "Cart" },
+  { text: "Packages" },
+  { text: "Add Car" }
+  
   
 ];
 
 const list4 = [
-  { text: "Shop DC" },
-  { text: "Shop DC Collections" },
+  { text: "Home" },
+  { text: "About Us" },
+  { text: "Blog" },
+  { text: "Contact" },
+  { text: "Rewind & Return" }
 ];
 
 
@@ -310,5 +306,44 @@ const clienti = [
   }
 ];
 
-export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1, auto2, clienti };
+
+const auto4 = [
+  {
+    img: "src/assets/img/4bmw.jpg",
+    tel: "067512334 Auto-Car",
+    autocar: "BMW",
+    domanda: "Why is BMW loved?",
+    text: "BMWs have a different design and style.",
+    button: "More"
+
+  },
+  {
+    img: "src/assets/img/4audi.jpg",
+    tel: "067512334 Auto-Car",
+    autocar: "Audi",
+    domanda: "Why is Audi loved?",
+    text: "Audis have a different design and style.",
+    button: "More"
+
+  },
+  {
+    img: "src/assets/img/4skoda.jpg",
+    tel: "067512334 Auto-Car",
+    autocar: "Skoda",
+    domanda: "Why is Skoda loved?",
+    text: "Skodas have a different design and style.",
+    button: "More"
+
+  },
+  {
+    img: "src/assets/img/4auris.jpg",
+    tel: "067512334 Auto-Car",
+    autocar: "Auris",
+    domanda: "Is the Auris loved?",
+    text: "Auris has a different design and style.",
+    button: "More"
+
+  }
+];
+export { mainMenu, footerMenu, footerImages, list1, list2, list3, list4, socialIcons, cardsData, secondMenu, auto1, auto2, clienti, auto4 };
 
