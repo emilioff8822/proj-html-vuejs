@@ -5,7 +5,7 @@
     </div>
     <h3 class="card-name">
       {{ name }}
-      <span class="icon-text"><font-awesome-icon :icon="checkIcon" /></span>
+      <span class="icon-text check-icon"><font-awesome-icon :icon="checkIcon" /></span>
     </h3>
     <p class="type">{{ type }}</p>
     <div class="icon-row">
@@ -207,10 +207,24 @@ padding-bottom: 10px;
   justify-content: space-between;
   margin-bottom: 10px;
 }
+.check-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  padding-left:  8px; 
+  font-size: 15px; 
+}
 
-
-
-
+.check-icon .fa-icon {
+  font-size: 12px;
+  margin: 0 auto;
+}
 
 
 
