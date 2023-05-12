@@ -30,3 +30,4 @@ Il file `menus.js` gestisce le cards. Queste card sono utilizzate nel menu di na
 ## FontAwesome
 FontAwesome è utilizzato in tutto il progetto per fornire icone vettoriali e loghi di social media. È integrato nel progetto tramite il pacchetto `@fortawesome/vue-fontawesome`.
 
+ho aggiunginto infine una logica per la ricerca dinamica delle auto basandosi su tipo e nome e tipo. tramite un wtach si attiva ognio volta che viene modificata la serachbar senza bisogno di cliccare su search
