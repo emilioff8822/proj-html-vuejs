@@ -10,12 +10,16 @@
       >
         <font-awesome-icon icon="heart" />
       </div>
+
     </div>
     <p class="card-name">
       {{ name }}
       <span class="icon-text check-icon"><font-awesome-icon :icon="checkIcon" /></span>
-    </p>
+    </p> 
+
     <p class="type">{{ type }}</p>
+    
+    
     <div class="icon-row">
       <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
       <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>

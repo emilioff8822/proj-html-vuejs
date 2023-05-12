@@ -1,30 +1,36 @@
 <template>
   <div class="container">
+    <!-- Jumbotron -->
     <div class="jumbotron">
       <img class="logo" :src="images[counter]" alt="logo">
       <div class="jumbotron-text">
-        <h1>Buy and Sell your car at its value</h1>
-        <h4>Find the right place and dealer</h4>
+        <h1>Compra e vendi la tua auto al suo valore</h1>
+        <h4>Trova il posto giusto e il concessionario</h4>
         <div class="learn-more">
-          Learn more
+          Scopri di più
           <span class="learn-more-arrow">&rarr;</span>
         </div>
       </div>
       <div @click="next" class="swiper-button-next">&#10095;</div>
       <div @click="prev" class="swiper-button-prev">&#10094;</div>
     </div>
+
+    <!-- Second Menu -->
     <div class="card-container">
       <div class="second-menu" v-for="(item, index) in secondMenu" :key="index">
-        <input v-if="item.type === 'input'" v-model="item.value" :placeholder="item.placeholder" />
+        <input v-if="item.type === 'input'" v-model="search" :placeholder="item.placeholder" />
         <span v-else-if="item.type === 'text'">{{ item.text }}</span>
-        <button v-else-if="item.type === 'button'" class="search-button">{{ item.text }}</button>
+        <button v-else-if="item.type === 'button'" class="search-button" @click="filterAuto">{{ item.text }}</button>
       </div>
-      <div class="auto1-cards">
-        <Card v-for="(item, index) in auto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
-      </div>
-      <div class="auto2-cards">
-        <AutoCards2
-        v-for="(item, index) in auto2"
+    </div>
+
+    <!-- Auto Cards -->
+    <div class="auto1-cards">
+      <Card v-for="(item, index) in filteredAuto1" :key="index" :img="item.img" :name="item.name" :listings="item.listings" />
+    </div>
+    <div class="auto2-cards">
+      <AutoCards2
+        v-for="(item, index) in filteredAuto2"
         :key="index"
         :img="item.img"
         :name="item.name"
@@ -38,12 +44,13 @@
         :fuel="item.fuel"
         :additionalClass="'auto2-card'"
       />
-      </div>
-      <div class="show-all-button-container">
-        <button class="show-all-button">
-          Show all cards <span class="show-all-arrow">&rarr;</span>
-        </button>
-      </div>
+    </div>
+
+    <!-- Show All Button -->
+    <div class="show-all-button-container">
+      <button class="show-all-button">
+        Mostra tutte le schede <span class="show-all-arrow">&rarr;</span>
+      </button>
     </div>
    
     
@@ -83,13 +90,12 @@
     
     
 
-<script>
+    <script>
+import { ref, onMounted } from 'vue';
 import { secondMenu, auto1, auto2, clienti } from "../data/menus";
 import Card from './Card.vue';
 import AutoCards2 from './AutoCards2.vue';  
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
 
 export default {
   name: "Main",
@@ -97,7 +103,7 @@ export default {
     Card,
     FontAwesomeIcon,
     AutoCards2
-},
+  },
   data() {
     return {
       secondMenu,
@@ -109,7 +115,10 @@ export default {
       images: [
         "src/assets/img/jumbo.jpg",
         "src/assets/img/jumbo2.jpg"
-      ]
+      ],
+      search: '',
+      filteredAuto1: [],
+      filteredAuto2: [],
     };
   },
   methods: {
@@ -120,15 +129,32 @@ export default {
     prev() {
       this.counter--;
       if (this.counter < 0) this.counter = this.images.length - 1;
+    },
+    filterAuto() {
+      this.filteredAuto1 = this.auto1.filter((item) =>
+        item.name.toLowerCase().includes(this.search.toLowerCase())
+      );
+      this.filteredAuto2 = this.auto2.filter((item) =>
+      item.name.toLowerCase().includes(this.search.toLowerCase()) || 
+    item.type.toLowerCase().includes(this.search.toLowerCase())      );
+    }
+  },
+  watch: {
+    search: function () {
+      this.filterAuto();
     }
   },
   mounted() {
     setInterval(() => {
       this.next();
     }, 8000);
+    this.filteredAuto1 = this.auto1;
+    this.filteredAuto2 = this.auto2;
   }
 };
 </script>
+
+    
 
 
 
