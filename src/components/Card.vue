@@ -10,12 +10,12 @@
     <div class="card-img-container">
       <img :src="img" :alt="name">
     </div>
-    <h3 class="card-name">{{ name }}</h3>
+    <p class="card-name">{{ name }}</p>
     <p><font-awesome-icon :icon="checkIcon" /> {{ type }}</p>
     <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
     <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
     <p class="icon-text"><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
-    <p>Listings: {{ listings }}</p>
+    <p v-if="listings">Listings: {{ listings }}</p>
   </div>
 </template>
 
@@ -158,6 +158,7 @@ p {
   margin: 0;
 padding-top: 10px;  
 padding-bottom: 10px; 
+font-size: 18px;
 }
 
 .card-text {

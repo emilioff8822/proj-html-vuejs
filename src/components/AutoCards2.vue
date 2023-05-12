@@ -11,10 +11,10 @@
         <font-awesome-icon icon="heart" />
       </div>
     </div>
-    <h3 class="card-name">
+    <p class="card-name">
       {{ name }}
       <span class="icon-text check-icon"><font-awesome-icon :icon="checkIcon" /></span>
-    </h3>
+    </p>
     <p class="type">{{ type }}</p>
     <div class="icon-row">
       <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
@@ -184,6 +184,7 @@ p {
   margin: 0;
 padding-top: 10px;  
 padding-bottom: 10px; 
+font-size: 18px;
 }
 
 .card-text {
@@ -236,8 +237,8 @@ padding-bottom: 10px;
   background-color: black;
   color: white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-left: 5px;
   padding-left:  8px; 
   font-size: 15px; 

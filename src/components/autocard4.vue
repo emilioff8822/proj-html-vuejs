@@ -90,7 +90,7 @@ export default {
   margin: 0;
   padding-top: 10px;  
   padding-bottom: 10px; 
-  font-weight: 600;
+  font-size: 12px;
 }
 
 .card-text {
@@ -98,11 +98,12 @@ export default {
   padding-bottom: 20px; 
 }
 
-.card-question {
+.auto4-card .card-question {
   margin: 0;
-  padding-bottom: 10px; 
-  font-weight: bold;
+  padding-bottom: 10px;
+  font-weight: bold !important;
 }
+
 
 .more-button {
   background-color: black;
