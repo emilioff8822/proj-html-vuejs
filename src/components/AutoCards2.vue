@@ -1,39 +1,43 @@
 <template>
   <div class="card" :class="additionalClass">
-    
     <div class="card-img-container">
       <img :src="img" :alt="name">
-      <div 
-        class="heart-icon"
-        :class="{ 'active': isHeartClicked }"
-        @click="toggleHeart"
-      >
-        <font-awesome-icon icon="heart" />
+    </div>
+
+    <div class="content-container">
+      <p class="card-name">{{ name }}</p> 
+      <p class="type">{{ type }}</p>
+
+      <div class="icon-row">
+        <div>
+          <font-awesome-icon :icon="priceIcon" />
+          <span>{{ price }}</span>
+        </div>
+        <div>
+          <font-awesome-icon :icon="brandIcon" />
+          <span>{{ brand }}</span>
+        </div>
+        <div>
+          <font-awesome-icon :icon="fuelIcon" />
+          <span>{{ fuel }}</span>
+        </div>
+        <div class="heart-icon" :class="{ 'active': isHeartClicked }" @click="toggleHeart">
+          <font-awesome-icon icon="heart" />
+        </div>
       </div>
+      
+      <p class="card-text">{{ text }}</p>
 
+      <div class="inline-elements">
+        <p class="card-tel">{{ tel }}</p>
+        <p class="card-autocar">{{ autocar }}</p>
+        <p class="card-domanda">{{ domanda }}</p>
+      </div>
+      <p v-if="listings">Listings: {{ listings }}</p>
     </div>
-    <p class="card-name">
-      {{ name }}
-      <span class="icon-text check-icon"><font-awesome-icon :icon="checkIcon" /></span>
-    </p> 
-
-    <p class="type">{{ type }}</p>
-    
-    
-    <div class="icon-row">
-      <p class="icon-text"><font-awesome-icon :icon="priceIcon" /> {{ price }}</p>
-      <p class="icon-text"><font-awesome-icon :icon="brandIcon" /> {{ brand }}</p>
-      <p class="icon-text"><font-awesome-icon :icon="fuelIcon" /> {{ fuel }}</p>
-    </div>
-    <p class="card-text">{{ text }}</p>
-    <div class="inline-elements">
-      <p class="card-tel">{{ tel }}</p>
-      <p class="card-autocar">{{ autocar }}</p>
-      <p class="card-domanda">{{ domanda }}</p>
-    </div>
-    <p v-if="listings">Listings: {{ listings }}</p>
   </div>
 </template>
+
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -145,6 +149,8 @@ export default {
   flex-direction: row; /* Aggiunto */
   flex-wrap: wrap; /* Aggiunto */
   transition: transform 0.3s ease ;
+  text-align: left; /* Allinea il testo a sinistra */
+
 
  
 }
@@ -166,9 +172,9 @@ export default {
 }
 
 .card-img-container img {
-  max-width: 100%;
-  
-  max-height: 100%;
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
 }
 
 h3 {
@@ -233,6 +239,7 @@ font-size: 18px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding-right: 10px;
 }
 .check-icon {
   display: inline-flex;
@@ -251,6 +258,14 @@ font-size: 18px;
 .check-icon .fa-icon {
   font-size: 12px;
   margin: 0 auto;
+  
+}
+
+.svg-inline--fa {
+  padding-right: 5px;
+}
+span {
+  margin-right: 20px;
 }
 
 .card:hover {
